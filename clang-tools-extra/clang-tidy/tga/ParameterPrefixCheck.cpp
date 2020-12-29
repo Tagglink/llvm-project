@@ -1,4 +1,4 @@
-//===--- TgaParameterPrefixCheck.cpp - clang-tidy -------------------------===//
+//===--- ParameterPrefixCheck.cpp - clang-tidy ----------------------------===//
 //
 // Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
 // See https://llvm.org/LICENSE.txt for license information.
@@ -6,7 +6,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include "TgaParameterPrefixCheck.h"
+#include "ParameterPrefixCheck.h"
 #include "clang/AST/ASTContext.h"
 #include "clang/ASTMatchers/ASTMatchFinder.h"
 
@@ -14,14 +14,14 @@ using namespace clang::ast_matchers;
 
 namespace clang {
 namespace tidy {
-namespace misc {
+namespace tga {
 
-void TgaParameterPrefixCheck::registerMatchers(MatchFinder *Finder) {
+void ParameterPrefixCheck::registerMatchers(MatchFinder *Finder) {
   // FIXME: Add matchers.
   Finder->addMatcher(functionDecl().bind("x"), this);
 }
 
-void TgaParameterPrefixCheck::check(const MatchFinder::MatchResult &Result) {
+void ParameterPrefixCheck::check(const MatchFinder::MatchResult &Result) {
   // FIXME: Add callback implementation.
   const auto *MatchedDecl = Result.Nodes.getNodeAs<FunctionDecl>("x");
   if (!MatchedDecl->getIdentifier() || MatchedDecl->getName().startswith("awesome_"))
@@ -32,6 +32,6 @@ void TgaParameterPrefixCheck::check(const MatchFinder::MatchResult &Result) {
       << FixItHint::CreateInsertion(MatchedDecl->getLocation(), "awesome_");
 }
 
-} // namespace misc
+} // namespace tga
 } // namespace tidy
 } // namespace clang

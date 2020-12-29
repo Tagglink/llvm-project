@@ -208,7 +208,7 @@ Clang-Tidy Checks
    `misc-non-private-member-variables-in-classes <misc-non-private-member-variables-in-classes.html>`_,
    `misc-redundant-expression <misc-redundant-expression.html>`_, "Yes"
    `misc-static-assert <misc-static-assert.html>`_, "Yes"
-   `misc-tga-parameter-prefix <misc-tga-parameter-prefix.html>`_, "Yes"
+   `misc-tga-parameter-prefix <misc-tga-parameter-prefix.html>`_,
    `misc-throw-by-value-catch-by-reference <misc-throw-by-value-catch-by-reference.html>`_,
    `misc-unconventional-assign-operator <misc-unconventional-assign-operator.html>`_,
    `misc-uniqueptr-reset-release <misc-uniqueptr-reset-release.html>`_, "Yes"
@@ -312,6 +312,7 @@ Clang-Tidy Checks
    `readability-uniqueptr-delete-release <readability-uniqueptr-delete-release.html>`_, "Yes"
    `readability-uppercase-literal-suffix <readability-uppercase-literal-suffix.html>`_, "Yes"
    `readability-use-anyofallof <readability-use-anyofallof.html>`_,
+   `tga-parameter-prefix <tga-parameter-prefix.html>`_, "Yes"
    `zircon-temporary-objects <zircon-temporary-objects.html>`_,
 
 

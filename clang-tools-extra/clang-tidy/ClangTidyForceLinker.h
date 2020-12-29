@@ -133,6 +133,11 @@ extern volatile int ReadabilityModuleAnchorSource;
 static int LLVM_ATTRIBUTE_UNUSED ReadabilityModuleAnchorDestination =
     ReadabilityModuleAnchorSource;
 
+// This anchor is used to force the linker to link the TgaModule.
+extern volatile int TgaModuleAnchorSource;
+static int LLVM_ATTRIBUTE_UNUSED TgaModuleAnchorDestination =
+    TgaModuleAnchorSource;
+
 // This anchor is used to force the linker to link the ZirconModule.
 extern volatile int ZirconModuleAnchorSource;
 static int LLVM_ATTRIBUTE_UNUSED ZirconModuleAnchorDestination =
