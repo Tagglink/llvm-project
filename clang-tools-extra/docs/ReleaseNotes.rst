@@ -154,11 +154,6 @@ New checks
   Alias to the :doc:`bugprone-signal-handler
   <clang-tidy/checks/bugprone-signal-handler>` check.
 
-- New :doc:`misc-tga-parameter-prefix
-  <clang-tidy/checks/misc-tga-parameter-prefix>` check.
-
-  FIXME: add release notes.
-
 - New :doc:`performance-no-int-to-ptr
   <clang-tidy/checks/performance-no-int-to-ptr>` check.
 
