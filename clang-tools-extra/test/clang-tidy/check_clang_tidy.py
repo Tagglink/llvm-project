@@ -42,6 +42,7 @@ def write_file(file_name, text):
 def run_test_once(args, extra_args):
   resource_dir = args.resource_dir
   assume_file_name = args.assume_filename
+  clang_tidy_binary = args.clang_tidy_binary
   input_file_name = args.input_file_name
   check_name = args.check_name
   temp_file_name = args.temp_file_name
@@ -135,7 +136,7 @@ def run_test_once(args, extra_args):
   original_file_name = temp_file_name + ".orig"
   write_file(original_file_name, cleaned_test)
 
-  args = ['clang-tidy', temp_file_name, '-fix', '--checks=-*,' + check_name] + \
+  args = [clang_tidy_binary, temp_file_name, '-fix', '--checks=-*,' + check_name] + \
       clang_tidy_extra_args + ['--'] + clang_extra_args
   if expect_clang_tidy_error:
     args.insert(0, 'not')
@@ -225,6 +226,7 @@ def main():
   parser.add_argument('-expect-clang-tidy-error', action='store_true')
   parser.add_argument('-resource-dir')
   parser.add_argument('-assume-filename')
+  parser.add_argument('clang_tidy_binary')
   parser.add_argument('input_file_name')
   parser.add_argument('check_name')
   parser.add_argument('temp_file_name')
