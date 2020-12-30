@@ -4,6 +4,7 @@ set(LLVM_LINK_COMPONENTS
   )
 
 add_clang_library(clangTidyTgaModule
+  MemberPrefixCheck.cpp
   ParameterPrefixCheck.cpp
   TgaTidyModule.cpp
 

@@ -9,6 +9,7 @@
 #include "../ClangTidy.h"
 #include "../ClangTidyModule.h"
 #include "../ClangTidyModuleRegistry.h"
+#include "MemberPrefixCheck.h"
 #include "ParameterPrefixCheck.h"
 
 using namespace clang::ast_matchers;
@@ -21,6 +22,8 @@ class TgaModule : public ClangTidyModule {
  public:
   void addCheckFactories(ClangTidyCheckFactories &CheckFactories) override {
 
+    CheckFactories.registerCheck<MemberPrefixCheck>(
+        "tga-member-prefix");
     CheckFactories.registerCheck<ParameterPrefixCheck>(
         "tga-parameter-prefix");
   }
